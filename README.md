@@ -4,11 +4,12 @@ Un Workshop interactivo y educativo sobre concurrencia en Go, construido con Nex
 
 ## 🎯 Características
 
-- **4 Secciones Educativas:**
-  - ¿Por qué Go? - Razones para aprender concurrencia en Go
-  - Visualización - Herramientas interactivas para entender concurrencia
-  - Goroutines - Aprende sobre las unidades de concurrencia de Go
-  - Channels - Domina la comunicación entre goroutines
+- **5 Secciones Educativas:**
+  - **Threads** - Entiende cómo funcionan los threads del CPU y por qué Go es superior
+  - **¿Por qué Go?** - Razones para aprender concurrencia en Go
+  - **Visualización** - Herramientas interactivas para entender concurrencia
+  - **Goroutines** - Aprende sobre las unidades de concurrencia de Go
+  - **Channels** - Domina la comunicación entre goroutines
 
 - **Interfaz Moderna:**
   - Sidebar navegable
@@ -49,16 +50,21 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Layout principal con sidebar
-│   ├── page.tsx            # Página de inicio
-│   ├── globals.css         # Estilos globales
-│   ├── why-go/             # Sección: ¿Por qué Go?
-│   ├── visualization/      # Sección: Visualización
-│   ├── goroutines/         # Sección: Goroutines
-│   └── channels/           # Sección: Channels
+│   ├── layout.tsx              # Layout principal con sidebar
+│   ├── page.tsx                # Página de inicio
+│   ├── globals.css             # Estilos globales
+│   │
+│   ├── threads/                # Sección: Threads & Concurrencia
+│   │   └── page.tsx            # Simulador de CPU threads
+│   ├── why-go/                 # Sección: ¿Por qué Go?
+│   ├── visualization/          # Sección: Visualización
+│   ├── goroutines/             # Sección: Goroutines
+│   └── channels/               # Sección: Channels
 └── components/
-    ├── app-sidebar.tsx     # Componente de sidebar
-    └── ui/                 # Componentes de shadcn/ui
+    ├── app-sidebar.tsx         # Componente de sidebar
+    ├── cpu-threads-visualizer.tsx # Simulador interactivo de threads
+    ├── thread-education.tsx    # Conceptos educativos de threads
+    └── ui/                     # Componentes de shadcn/ui
 ```
 
 ## 🎨 Paleta de Colores
@@ -78,6 +84,16 @@ src/
 - **Lucide Icons** - Iconos
 
 ## 📚 Contenido
+
+### Página: Threads & Concurrencia
+Introduce los conceptos fundamentales de threads del CPU:
+- **Conceptos**: Explicación de qué son los threads, cómo funcionan y su relación con los cores del CPU
+- **Simulador CPU Threads**: Herramienta interactiva para visualizar cómo múltiples threads ejecutan tareas
+  - Ajusta el número de threads (1-8)
+  - Agrega tareas a la cola
+  - Observa cómo los threads libres toman tareas de la cola
+  - Ve el progreso en tiempo real
+  - Completa tareas y recarga threads automáticamente
 
 ### Página: ¿Por qué Go?
 - Simplicidad del lenguaje
@@ -130,5 +146,5 @@ MIT
 
 ## 👨‍💻 Autor
 
-Workshop creado para enseñar concurrencia en Go de forma interactiva.
+Workshop creado para enseñar concurrencia en Go en Wompi Teacher
 
