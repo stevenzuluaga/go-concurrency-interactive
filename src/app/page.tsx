@@ -1,65 +1,107 @@
-import Image from "next/image";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#FAFAFA] font-sans dark:bg-[#2C2A29]">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-[#FAFAFA] dark:bg-[#2C2A29] sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/logo.svg"
-          alt="Wompi logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-[#2C2A29] dark:text-[#FAFAFA]">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-[#00825A] dark:text-[#B0F2AE]">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-[#00825A] dark:text-[#B0F2AE]"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-[#00825A] dark:text-[#B0F2AE]"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-background">
+      <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+        <div className="space-y-8 text-center">
+          {/* Header */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-center gap-3">
+              <Image src="/motorcycle.svg" alt="Logo" width={200} height={200} />
+            </div>
+            <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
+              Concurrencia en Go
+            </h1>
+          </div>
+
+          {/* Description */}
+          <div className="space-y-6 rounded-lg border border-border bg-card p-8">
+            <div>
+              <h2 className="text-2xl font-semibold text-foreground">
+                Bienvenido al tutorial interactivo
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                Go es un lenguaje diseñado desde cero para la concurrencia moderna. En este
+                tutorial descubrirás por qué Go es perfecto para aplicaciones concurrentes y cómo
+                dominar sus poderosas características.
+              </p>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-3 rounded-lg border border-border bg-card p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <span className="text-2xl">📚</span>
+              </div>
+              <h3 className="text-lg font-semibold text-foreground">¿Por qué Go?</h3>
+              <p className="text-sm text-muted-foreground">
+                Descubre las razones por las que Go es uno de los mejores lenguajes para
+                programación concurrente
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded-lg border border-border bg-card p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                <span className="text-2xl">👀</span>
+              </div>
+              <h3 className="text-lg font-semibold text-foreground">Visualización</h3>
+              <p className="text-sm text-muted-foreground">
+                Ve cómo funciona la concurrencia con visualizaciones interactivas
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded-lg border border-border bg-card p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-info/10">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-lg font-semibold text-foreground">Goroutines</h3>
+              <p className="text-sm text-muted-foreground">
+                Aprende sobre goroutines, las unidades de concurrencia ligeras de Go
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded-lg border border-border bg-card p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <span className="text-2xl">📡</span>
+              </div>
+              <h3 className="text-lg font-semibold text-foreground">Channels</h3>
+              <p className="text-sm text-muted-foreground">
+                Domina los channels para comunicación segura entre goroutines
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Link href="/why-go">Comenzar Tutorial</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/visualization">Ver Visualización</Link>
+            </Button>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-lg border border-border bg-card p-4">
+              <div className="text-3xl font-bold text-primary">4</div>
+              <p className="text-sm text-muted-foreground">Secciones de aprendizaje</p>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <div className="text-3xl font-bold text-accent">100%</div>
+              <p className="text-sm text-muted-foreground">Interactivo</p>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <div className="text-3xl font-bold text-info">∞</div>
+              <p className="text-sm text-muted-foreground">Goroutines posibles</p>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#00825A] px-5 text-[#FAFAFA] transition-colors hover:bg-[#006344] dark:hover:bg-[#B0F2AE] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-[#00825A]/[.30] px-5 transition-colors hover:border-transparent hover:bg-[#DFFF61]/[.04] dark:border-[#B0F2AE]/[.145] dark:hover:bg-[#00825A]/[.1] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
-  );
+  )
 }
