@@ -35,7 +35,17 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-3 rounded-lg border border-border bg-card p-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                <span className="text-2xl">📚</span>
+                <span className="text-2xl">�</span>
+              </div>
+              <h3 className="text-lg font-semibold text-foreground">Threads & Concurrencia</h3>
+              <p className="text-sm text-muted-foreground">
+                Entiende cómo funcionan los threads del CPU y la diferencia entre concurrencia y paralelismo
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded-lg border border-border bg-card p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <span className="text-2xl">�📚</span>
               </div>
               <h3 className="text-lg font-semibold text-foreground">¿Por qué Go?</h3>
               <p className="text-sm text-muted-foreground">
@@ -78,24 +88,12 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-              <Link href="/why-go">Comenzar Workshop</Link>
+              <Link href="/threads">Entender Threads</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/visualization">Ver Visualización</Link>
+              <Link href="/why-go">Workshop</Link>
             </Button>
-          </div>
-
-          {/* Quick Stats */}
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-lg border border-border bg-card p-4">
-              <div className="text-3xl font-bold text-primary">4</div>
-              <p className="text-sm text-muted-foreground">Secciones de aprendizaje</p>
-            </div>
-            <div className="rounded-lg border border-border bg-card p-4">
-              <div className="text-3xl font-bold text-info">∞</div>
-              <p className="text-sm text-muted-foreground">Goroutines posibles</p>
-            </div>
-          </div>
+          </div>         
         </div>
       </div>
     </div>

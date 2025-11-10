@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { BookOpen, Eye, Zap, Waves, Home } from "lucide-react"
+import { BookOpen, Eye, Zap, Waves, Home, Cpu } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -25,6 +25,12 @@ const navItems = [
         title: "Inicio",
         href: "/",
         icon: Home,
+    },
+    {
+        title: "Threads & Concurrencia",
+        href: "/threads",
+        icon: Cpu,
+        description: "Entiende cómo funcionan los threads del CPU",
     },
     {
         title: "¿Por qué Go?",
