@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, RotateCcw, Plus, Minus } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import React, { useState, useEffect, useRef } from "react";
+import { Play, Pause, RotateCcw, Plus, Minus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 interface ThreadState {
   progress: number;
@@ -15,10 +21,10 @@ export function CPUThreadsVisualizer() {
   const [isRunning, setIsRunning] = useState(false);
   const [taskQueue, setTaskQueue] = useState<string[]>([]);
   const [threads, setThreads] = useState<ThreadState[]>(
-    Array.from({ length: 2 }, () => ({ progress: 0, taskId: null }))
+    Array.from({ length: 2 }, () => ({ progress: 0, taskId: null })),
   );
   const [completed, setCompleted] = useState(0);
-  
+
   const taskQueueRef = useRef<string[]>([]);
   const threadsRef = useRef<ThreadState[]>(threads);
 
@@ -34,7 +40,10 @@ export function CPUThreadsVisualizer() {
   // Actualizar threads cuando cambia el número
   useEffect(() => {
     if (!isRunning) {
-      const newThreads = Array.from({ length: numThreads }, () => ({ progress: 0, taskId: null }));
+      const newThreads = Array.from({ length: numThreads }, () => ({
+        progress: 0,
+        taskId: null,
+      }));
       setThreads(newThreads);
       threadsRef.current = newThreads;
     }
@@ -47,7 +56,7 @@ export function CPUThreadsVisualizer() {
     const interval = setInterval(() => {
       const currentThreads = threadsRef.current;
       const currentQueue = taskQueueRef.current;
-      
+
       let newQueue = [...currentQueue];
       let completedCount = 0;
 
@@ -86,13 +95,19 @@ export function CPUThreadsVisualizer() {
   }, [isRunning]);
 
   const addTasks = () => {
-    const newTasks = Array.from({ length: 5 }, (_, i) => `task-${Date.now()}-${i}`);
+    const newTasks = Array.from(
+      { length: 5 },
+      (_, i) => `task-${Date.now()}-${i}`,
+    );
     setTaskQueue((q) => [...q, ...newTasks]);
   };
 
   const reset = () => {
     setIsRunning(false);
-    const newThreads = Array.from({ length: numThreads }, () => ({ progress: 0, taskId: null }));
+    const newThreads = Array.from({ length: numThreads }, () => ({
+      progress: 0,
+      taskId: null,
+    }));
     setTaskQueue([]);
     setThreads(newThreads);
     setCompleted(0);
@@ -101,7 +116,10 @@ export function CPUThreadsVisualizer() {
   // Toggle ejecutar/pausar; si no hay tareas al iniciar, agrega 5 automáticamente
   const toggleRun = () => {
     if (!isRunning && taskQueueRef.current.length === 0) {
-      const newTasks = Array.from({ length: 5 }, (_, i) => `task-${Date.now()}-${i}`);
+      const newTasks = Array.from(
+        { length: 5 },
+        (_, i) => `task-${Date.now()}-${i}`,
+      );
       setTaskQueue((q) => [...q, ...newTasks]);
     }
     setIsRunning((r) => !r);
@@ -113,12 +131,16 @@ export function CPUThreadsVisualizer() {
       <Card>
         <CardHeader>
           <CardTitle>Simulador de Threads del CPU</CardTitle>
-          <CardDescription>Cómo el CPU ejecuta múltiples tareas con threads</CardDescription>
+          <CardDescription>
+            Cómo el CPU ejecuta múltiples tareas con threads
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:gap-3">
             <div>
-              <label className="block text-sm font-medium mb-2">Threads: {numThreads}</label>
+              <label className="block text-sm font-medium mb-2">
+                Threads: {numThreads}
+              </label>
               <div className="flex items-center gap-2">
                 <Button
                   variant="outline"
@@ -128,7 +150,9 @@ export function CPUThreadsVisualizer() {
                 >
                   <Minus className="h-4 w-4" />
                 </Button>
-                <span className="w-8 text-center font-semibold">{numThreads}</span>
+                <span className="w-8 text-center font-semibold">
+                  {numThreads}
+                </span>
                 <Button
                   variant="outline"
                   size="sm"
@@ -143,10 +167,14 @@ export function CPUThreadsVisualizer() {
             <div className="flex gap-2 flex-1 md:flex-none">
               <Button
                 onClick={toggleRun}
-                variant={isRunning ? 'default' : 'outline'}
+                variant={isRunning ? "default" : "outline"}
               >
-                {isRunning ? <Pause className="mr-2 h-4 w-4" /> : <Play className="mr-2 h-4 w-4" />}
-                {isRunning ? 'Pausar' : 'Iniciar'}
+                {isRunning ? (
+                  <Pause className="mr-2 h-4 w-4" />
+                ) : (
+                  <Play className="mr-2 h-4 w-4" />
+                )}
+                {isRunning ? "Pausar" : "Iniciar"}
               </Button>
               <Button onClick={addTasks} variant="outline">
                 + 5 Tareas
@@ -194,7 +222,11 @@ export function CPUThreadsVisualizer() {
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm font-medium">
                   Thread {idx}
-                  {thread.taskId && <span className="ml-2 text-xs text-muted-foreground">({thread.taskId})</span>}
+                  {thread.taskId && (
+                    <span className="ml-2 text-xs text-muted-foreground">
+                      ({thread.taskId})
+                    </span>
+                  )}
                 </span>
                 <span className="text-xs text-muted-foreground">
                   {Math.round(thread.progress)}%
@@ -217,13 +249,17 @@ export function CPUThreadsVisualizer() {
       {taskQueue.length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm">Cola: {taskQueue.length} tareas esperando</CardTitle>
+            <CardTitle className="text-sm">
+              Cola: {taskQueue.length} tareas esperando
+            </CardTitle>
           </CardHeader>
           <CardContent className="text-xs text-muted-foreground">
             {taskQueue.slice(0, 5).map((task) => (
               <div key={task}>{task}</div>
             ))}
-            {taskQueue.length > 5 && <div>... y {taskQueue.length - 5} más</div>}
+            {taskQueue.length > 5 && (
+              <div>... y {taskQueue.length - 5} más</div>
+            )}
           </CardContent>
         </Card>
       )}

@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -10,7 +10,12 @@ export default function Home() {
           {/* Header */}
           <div className="space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <Image src="/motorcycle.svg" alt="Logo" width={200} height={200} />
+              <Image
+                src="/motorcycle.svg"
+                alt="Logo"
+                width={200}
+                height={200}
+              />
             </div>
             <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
               Concurrencia en Go
@@ -24,9 +29,10 @@ export default function Home() {
                 Bienvenido al Workshop de Concurrencia en Go
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Go es un lenguaje diseñado desde cero para la concurrencia moderna. En este
-                Workshop descubrirás por qué Go es perfecto para aplicaciones concurrentes y cómo
-                dominar sus poderosas características.
+                Go es un lenguaje diseñado desde cero para la concurrencia
+                moderna. En este Workshop descubrirás por qué Go es perfecto
+                para aplicaciones concurrentes y cómo dominar sus poderosas
+                características.
               </p>
             </div>
           </div>
@@ -37,9 +43,12 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <span className="text-2xl">�</span>
               </div>
-              <h3 className="text-lg font-semibold text-foreground">Threads & Concurrencia</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                Threads & Concurrencia
+              </h3>
               <p className="text-sm text-muted-foreground">
-                Entiende cómo funcionan los threads del CPU y la diferencia entre concurrencia y paralelismo
+                Entiende cómo funcionan los threads del CPU y la diferencia
+                entre concurrencia y paralelismo
               </p>
             </div>
 
@@ -47,10 +56,12 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <span className="text-2xl">�📚</span>
               </div>
-              <h3 className="text-lg font-semibold text-foreground">¿Por qué Go?</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                ¿Por qué Go?
+              </h3>
               <p className="text-sm text-muted-foreground">
-                Descubre las razones por las que Go es uno de los mejores lenguajes para
-                programación concurrente
+                Descubre las razones por las que Go es uno de los mejores
+                lenguajes para programación concurrente
               </p>
             </div>
 
@@ -58,9 +69,12 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
                 <span className="text-2xl">👀</span>
               </div>
-              <h3 className="text-lg font-semibold text-foreground">Visualización</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                Visualización
+              </h3>
               <p className="text-sm text-muted-foreground">
-                Ve cómo funciona la concurrencia con visualizaciones interactivas
+                Ve cómo funciona la concurrencia con visualizaciones
+                interactivas
               </p>
             </div>
 
@@ -68,9 +82,12 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-info/10">
                 <span className="text-2xl">⚡</span>
               </div>
-              <h3 className="text-lg font-semibold text-foreground">Goroutines</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                Goroutines
+              </h3>
               <p className="text-sm text-muted-foreground">
-                Aprende sobre goroutines, las unidades de concurrencia ligeras de Go
+                Aprende sobre goroutines, las unidades de concurrencia ligeras
+                de Go
               </p>
             </div>
 
@@ -78,7 +95,9 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <span className="text-2xl">📡</span>
               </div>
-              <h3 className="text-lg font-semibold text-foreground">Channels</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                Channels
+              </h3>
               <p className="text-sm text-muted-foreground">
                 Domina los channels para comunicación segura entre goroutines
               </p>
@@ -87,15 +106,19 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90"
+            >
               <Link href="/threads">Entender Threads</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="/why-go">Workshop</Link>
             </Button>
-          </div>         
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

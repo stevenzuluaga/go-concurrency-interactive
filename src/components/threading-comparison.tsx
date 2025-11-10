@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { Play, RotateCcw } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import React, { useState, useEffect } from "react";
+import { Play, RotateCcw } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ThreadingComparison() {
   const [isRunning, setIsRunning] = useState(false);
@@ -30,9 +30,24 @@ export function ThreadingComparison() {
   };
 
   const scenarios = [
-    { key: 'seq', title: 'Secuencial', desc: '1 thread, uno tras otro', color: 'bg-red-500' },
-    { key: 'con', title: 'Concurrente', desc: '1 thread, alternando', color: 'bg-yellow-500' },
-    { key: 'par', title: 'Paralelo', desc: '4 threads simultáneos', color: 'bg-blue-500' },
+    {
+      key: "seq",
+      title: "Secuencial",
+      desc: "1 thread, uno tras otro",
+      color: "bg-red-500",
+    },
+    {
+      key: "con",
+      title: "Concurrente",
+      desc: "1 thread, alternando",
+      color: "bg-yellow-500",
+    },
+    {
+      key: "par",
+      title: "Paralelo",
+      desc: "4 threads simultáneos",
+      color: "bg-blue-500",
+    },
   ];
 
   return (
@@ -43,9 +58,12 @@ export function ThreadingComparison() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex gap-2">
-            <Button onClick={() => setIsRunning(!isRunning)} variant={isRunning ? 'default' : 'outline'}>
+            <Button
+              onClick={() => setIsRunning(!isRunning)}
+              variant={isRunning ? "default" : "outline"}
+            >
               <Play className="mr-2 h-4 w-4" />
-              {isRunning ? 'Ejecutando...' : 'Comenzar'}
+              {isRunning ? "Ejecutando..." : "Comenzar"}
             </Button>
             <Button onClick={reset} variant="outline">
               <RotateCcw className="mr-2 h-4 w-4" />
@@ -65,27 +83,31 @@ export function ThreadingComparison() {
               <div>
                 <div className="flex justify-between text-sm mb-1">
                   <span>Progreso</span>
-                  <span>{Math.round(progress[s.key as keyof typeof progress])}%</span>
+                  <span>
+                    {Math.round(progress[s.key as keyof typeof progress])}%
+                  </span>
                 </div>
                 <div className="h-3 bg-muted rounded overflow-hidden">
                   <div
                     className={`h-full ${s.color} transition-all`}
-                    style={{ width: `${progress[s.key as keyof typeof progress]}%` }}
+                    style={{
+                      width: `${progress[s.key as keyof typeof progress]}%`,
+                    }}
                   />
                 </div>
               </div>
 
               <div className="bg-muted p-2 rounded text-center">
                 <div className="text-xl font-bold">
-                  {s.key === 'seq' && '1x'}
-                  {s.key === 'con' && '2x'}
-                  {s.key === 'par' && '4x'}
+                  {s.key === "seq" && "1x"}
+                  {s.key === "con" && "2x"}
+                  {s.key === "par" && "4x"}
                 </div>
                 <div className="text-xs text-muted-foreground">Speedup</div>
               </div>
 
               <div className="text-xs space-y-1 font-mono">
-                {s.key === 'seq' && (
+                {s.key === "seq" && (
                   <>
                     <div>[T1]</div>
                     <div>[T2]</div>
@@ -93,11 +115,11 @@ export function ThreadingComparison() {
                     <div>[T4]</div>
                   </>
                 )}
-                {s.key === 'con' && <div>[T1▸T2▸T3▸T4]</div>}
-                {s.key === 'par' && (
+                {s.key === "con" && <div>[T1▸T2▸T3▸T4]</div>}
+                {s.key === "par" && (
                   <>
-                    <div>[T1]  [T2]</div>
-                    <div>[T3]  [T4]</div>
+                    <div>[T1] [T2]</div>
+                    <div>[T3] [T4]</div>
                   </>
                 )}
               </div>
@@ -108,11 +130,20 @@ export function ThreadingComparison() {
 
       <Card className="border-l-4 border-blue-500">
         <CardContent className="pt-6 space-y-2 text-sm">
-          <p><strong>Secuencial:</strong> Las tareas se ejecutan una tras otra.</p>
-          <p><strong>Concurrente:</strong> Un thread alterna entre tareas rápidamente.</p>
-          <p><strong>Paralelo:</strong> Múltiples threads ejecutan al mismo tiempo.</p>
+          <p>
+            <strong>Secuencial:</strong> Las tareas se ejecutan una tras otra.
+          </p>
+          <p>
+            <strong>Concurrente:</strong> Un thread alterna entre tareas
+            rápidamente.
+          </p>
+          <p>
+            <strong>Paralelo:</strong> Múltiples threads ejecutan al mismo
+            tiempo.
+          </p>
           <p className="text-xs text-muted-foreground pt-2">
-            Go combina ambos: millones de goroutines ejecutándose en paralelo en múltiples cores.
+            Go combina ambos: millones de goroutines ejecutándose en paralelo en
+            múltiples cores.
           </p>
         </CardContent>
       </Card>
