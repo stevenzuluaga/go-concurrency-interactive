@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Concurrencia en Go - Tutorial Interactivo
 
-## Getting Started
+Un tutorial interactivo y educativo sobre concurrencia en Go, construido con Next.js y componentes de shadcn.
 
-First, run the development server:
+## 🎯 Características
+
+- **4 Secciones Educativas:**
+  - ¿Por qué Go? - Razones para aprender concurrencia en Go
+  - Visualización - Herramientas interactivas para entender concurrencia
+  - Goroutines - Aprende sobre las unidades de concurrencia de Go
+  - Channels - Domina la comunicación entre goroutines
+
+- **Interfaz Moderna:**
+  - Sidebar navegable
+  - Diseño responsivo
+  - Componentes de shadcn/ui
+  - Tema claro/oscuro
+
+- **Contenido Completo:**
+  - Explicaciones claras
+  - Ejemplos de código
+  - Comparativas con otros lenguajes
+  - Patrones y buenas prácticas
+
+## 🚀 Comenzar
+
+### Requisitos previos
+- Node.js 18+ 
+- npm o yarn
+
+### Instalación
 
 ```bash
+# Clonar el repositorio
+git clone <repo-url>
+cd go-concurrency-interactive
+
+# Instalar dependencias
+npm install
+
+# Ejecutar servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Estructura del Proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.tsx          # Layout principal con sidebar
+│   ├── page.tsx            # Página de inicio
+│   ├── globals.css         # Estilos globales
+│   ├── why-go/             # Sección: ¿Por qué Go?
+│   ├── visualization/      # Sección: Visualización
+│   ├── goroutines/         # Sección: Goroutines
+│   └── channels/           # Sección: Channels
+└── components/
+    ├── app-sidebar.tsx     # Componente de sidebar
+    └── ui/                 # Componentes de shadcn/ui
+```
 
-## Learn More
+## 🎨 Paleta de Colores
 
-To learn more about Next.js, take a look at the following resources:
+- **Primario**: #00825A (Verde oscuro)
+- **Secundario**: #B0F2AE (Verde claro)
+- **Acento**: #DFFF61 (Amarillo)
+- **Info**: #99D1FC (Azul claro)
+- **Fondo**: #FAFAFA (Claro) / #2C2A29 (Oscuro)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tecnologías
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js** - Framework React
+- **TypeScript** - Tipado estático
+- **Tailwind CSS v4** - Estilos
+- **shadcn/ui** - Componentes accesibles
+- **Lucide Icons** - Iconos
 
-## Deploy on Vercel
+## 📚 Contenido
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Página: ¿Por qué Go?
+- Simplicidad del lenguaje
+- Rendimiento superior
+- Herramientas integradas
+- Multiplataforma
+- Comparativa con Python, Java/C++, Rust
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Página: Visualización
+- Simulación interactiva de tareas concurrentes
+- Comparación visual: ejecución secuencial vs concurrente
+- Indicadores de estado en tiempo real
+
+### Página: Goroutines
+- Definición y características
+- Ejemplo básico
+- Ciclo de vida
+- Ligeras, fáciles de usar, multiplexadas
+- Buenas prácticas
+
+### Página: Channels
+- Tipos de channels (buffered/unbuffered)
+- Operaciones básicas
+- Select statement
+- Patrones comunes
+- Errores comunes
+
+## 🧪 Comandos
+
+```bash
+# Desarrollo
+npm run dev
+
+# Build
+npm run build
+
+# Producción
+npm run start
+
+# Linter
+npm run lint
+
+# Formato
+npm run format
+```
+
+## 📝 Licencia
+
+MIT
+
+## 👨‍💻 Autor
+
+Tutorial creado para enseñar concurrencia en Go de forma interactiva.
+
