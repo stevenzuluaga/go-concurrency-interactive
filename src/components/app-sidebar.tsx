@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation"
 import {
     Sidebar,
     SidebarContent,
+    SidebarFooter,
     SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
@@ -17,6 +18,7 @@ import {
     SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 import Image from "next/image"
+import { ModeToggle } from "./mode-toggle"
 
 const navItems = [
     {
@@ -73,8 +75,8 @@ export function AppSidebar() {
                                     asChild
                                     isActive={isActive}
                                     className={`${isActive
-                                            ? "bg-sidebar-primary text-sidebar-primary-foreground"
-                                            : "text-sidebar-foreground hover:bg-sidebar-accent"
+                                        ? "bg-sidebar-primary text-sidebar-primary-foreground"
+                                        : "text-sidebar-foreground hover:bg-sidebar-accent"
                                         }`}
                                 >
                                     <Link href={item.href} className="flex items-center gap-2">
@@ -87,11 +89,18 @@ export function AppSidebar() {
                                         {item.description}
                                     </p>
                                 )}
+
                             </SidebarMenuItem>
                         )
                     })}
                 </SidebarMenu>
             </SidebarContent>
+            <SidebarFooter>
+                <div className="flex items-center justify-center">
+
+                <ModeToggle />
+                </div>
+            </SidebarFooter>
         </Sidebar>
     )
 }

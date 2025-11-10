@@ -6,6 +6,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -25,20 +26,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${publicSans.variable}`}>
-        <SidebarProvider>
-          <AppSidebar />
-          <div className="w-full">
-            <div className="flex items-center gap-2 border-b border-border bg-card p-2">
-              <SidebarTrigger />
-              <h1 className="font-semibold text-foreground">Concurrencia en Go</h1>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SidebarProvider>
+            <AppSidebar />
+            <div className="w-full">
+              <div className="flex items-center gap-2 border-b border-border bg-card p-2">
+                <SidebarTrigger />
+                <h1 className="font-semibold text-foreground">Concurrencia en Go</h1>
+              </div>
+              <main className="flex-1">
+                {children}
+              </main>
             </div>
-            <main className="flex-1">
-              {children}
-            </main>
-          </div>
-        </SidebarProvider>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
