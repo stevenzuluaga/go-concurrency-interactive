@@ -123,7 +123,6 @@ export default function SchedulePage() {
 
         {/* Legend */}
         <div className="flex flex-wrap gap-4">
-         
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded-full bg-primary" />
             <span className="text-sm text-muted-foreground">Teoría</span>
@@ -132,7 +131,6 @@ export default function SchedulePage() {
             <div className="h-3 w-3 rounded-full bg-accent" />
             <span className="text-sm text-muted-foreground">Práctica</span>
           </div>
-        
         </div>
 
         {/* Schedule Timeline */}
