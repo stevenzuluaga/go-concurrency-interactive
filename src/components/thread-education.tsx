@@ -140,26 +140,7 @@ export function ThreadEducation() {
         </CardContent>
       </Card>
 
-      {/* Por qué Go */}
-      <Card className="border-l-4 border-green-600">
-        <CardHeader>
-          <CardTitle className="text-base">
-            ¿Por qué Go resuelve esto?
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <p>
-            Go usa <strong>goroutines</strong> en lugar de OS threads. Es como
-            tener lo mejor de ambos mundos:
-          </p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-            <li>Millones de goroutines (vs cientos de threads)</li>
-            <li>Scheduler automático del runtime (vs SO)</li>
-            <li>Sincronización fácil con canales</li>
-            <li>Sin la complejidad de threads tradicionales</li>
-          </ul>
-        </CardContent>
-      </Card>
+     
     </div>
   );
 }
